@@ -1,0 +1,5 @@
+dist
+docs
+example
+tests
+playwright.config.ts

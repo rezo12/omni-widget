@@ -1,0 +1,65 @@
+{
+	"name": "@capitec/omni-widget",
+	"version": "0.0.1",
+	"description": "Framework agnostic, zero dependency, remote widget interop web component and functions.",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"engines": {
+		"node": ">=16.x"
+	},
+	"files": [
+		"dist",
+		"!dist/*.tests.*",
+		"!dist/*.test.*",
+		"!dist/*.spec.*",
+		"src/*.ts",
+		"src/*.js",
+		"!src/*.spec.*",
+		"!src/*.tests.*",
+		"!src/*.test.*"
+	],
+	"scripts": {
+		"build": "tsc",
+		"test": "npx playwright test",
+		"lint": "eslint src/**/*.{js,ts}",
+		"docs": "npm run docs:api && npm run docs:copy && npm run docs:contributors",
+		"docs:api": "npx typedoc --out docs/api src/index.ts",
+		"docs:contributors": "npx all-contributors generate",
+		"docs:copy": "copyfiles -a \"./docs/logos/*\" \"./.oss-docs.json\" \"./docs/api\"",
+		"contributors:add": "npx all-contributors add",
+		"prepublish": "npm run build",
+		"serve": "((node -e \"if (! require('fs').existsSync('./example/node_modules')) {process.exit(1)} \" && cd ./example) || (cd ./example && npm i)) && npm run start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/capitec/omni-widget.git"
+	},
+	"keywords": [
+		"web components",
+		"widget"
+	],
+	"author": "Capitec",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/capitec/omni-widget/issues"
+	},
+	"homepage": "https://capitec.github.io/open-source/docs/omni-widget/",
+	"devDependencies": {
+		"@playwright/test": "^1.31.2",
+		"@typescript-eslint/eslint-plugin": "^5.23.0",
+		"@typescript-eslint/parser": "^5.23.0",
+		"all-contributors-cli": "^6.20.0",
+		"copyfiles": "^2.4.1",
+		"command-line-args": "^5.2.1",
+		"eslint": "^8.15.0",
+		"eslint-plugin-tsdoc": "^0.2.16",
+		"istanbul-lib-coverage": "^3.2.0",
+		"istanbul-lib-report": "^3.0.0",
+		"istanbul-reports": "^3.1.5",
+		"package-json": "^8.1.0",
+		"typedoc": "^0.22.15",
+		"typescript": "^4.6.4",
+		"v8-to-istanbul": "^9.1.0"
+	}
+}

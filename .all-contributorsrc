@@ -1,0 +1,27 @@
+{
+	"files": [
+		"README.md"
+	],
+	"imageSize": 100,
+	"commit": false,
+	"contributors": [
+		{
+			"login": "BOTLANNER",
+			"name": "BOTLANNER",
+			"avatar_url": "https://avatars.githubusercontent.com/u/16349308?v=4",
+			"profile": "https://github.com/BOTLANNER",
+			"contributions": [
+				"code",
+				"tool"
+			]
+		}
+	],
+	"badgeTemplate": "<a href=\"#contributors-\"><img src=\"https://img.shields.io/badge/all%20contributors-<%= contributors.length %>-orange?style=flat-square\" /></a>",
+	"contributorsPerLine": 7,
+	"projectName": "omni-widget",
+	"projectOwner": "capitec",
+	"repoType": "github",
+	"repoHost": "https://github.com",
+	"skipCi": true,
+	"commitConvention": "none"
+}
