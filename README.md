@@ -49,6 +49,29 @@ The `Widget` class also exposes static functions to make it easier for hosted wi
 npm install @capitec/omni-widget
 ```
 
+### For hosted widgets
+
+2️⃣ &nbsp; Import the `Widget` class from the package and use relevant static functions for initialisation, event handling and messaging.
+
+```js
+import { Widget } from '@capitec/omni-widget';
+
+if (!Widget.isHosted) {
+    console.log('Not hosted as a widget!');
+} else {
+    Widget.initialise(async function (identifier) {
+        console.log(`Widget loaded with identifier: '${identifier}'`);
+        const response = await Widget.messageApplicationAsync(Widget.currentIdentifier, 'some-event-from-the-widget', {
+            message: 'This is event detail.'
+        });
+    });
+    Widget.addEventListener('some-event-for-the-widget', async function (e) {
+        console.log(`Widget message: '${JSON.stringify(e.content)}'`);
+        e.callback('This is a response');
+    });
+}
+```
+
 ### For hosting widgets
 
 2️⃣ &nbsp; Import the package
@@ -83,29 +106,6 @@ document.querySelector('omni-widget').addEventListener('some-event-from-the-widg
     console.log('Widget event data: ' + JSON.stringify(widgetEventInfo.content));
     widgetEventInfo.callback('This is a response.');
 });
-```
-
-### For hosted widgets
-
-2️⃣ &nbsp; Import the `Widget` class from the package and use relevant static functions for initialisation, event handling and messaging.
-
-```js
-import { Widget } from '@capitec/omni-widget';
-
-if (!Widget.isHosted) {
-    console.log('Not hosted as a widget!');
-} else {
-    Widget.initialise(async function (identifier) {
-        console.log(`Widget loaded with identifier: '${identifier}'`);
-        const response = await Widget.messageApplicationAsync(Widget.currentIdentifier, 'some-event-from-the-widget', {
-            message: 'This is event detail.'
-        });
-    });
-    Widget.addEventListener('some-event-for-the-widget', async function (e) {
-        console.log(`Widget message: '${JSON.stringify(e.content)}'`);
-        e.callback('This is a response');
-    });
-}
 ```
 
 <br>
