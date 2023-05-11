@@ -116,7 +116,7 @@ const saveV8Coverage = async (page, config) => {
             //Skip any external scripts, we only care about code coverage related to our source code
             if (
                 entry.url === '' ||
-                !entry.url.startsWith('http://localhost:8084') ||
+                !entry.url.startsWith('http://localhost:6009') ||
                 (entry.url.includes('/__') && !entry.url.includes('/__wds-outside-root__/1/dist'))
             ) {
                 continue;
@@ -170,7 +170,7 @@ test('test widget', async () => {
     page.on('dialog', (dialog) => {
         dialog.accept(response);
     });
-    await page.goto('http://localhost:8084');
+    await page.goto('http://localhost:6009');
 
     await page.locator('button').click();
 
