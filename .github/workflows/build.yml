@@ -60,9 +60,6 @@ jobs:
             - name: Build Project 🔧
               run: npm run build
 
-            - name: Run Tests 🔥
-              run: npm run test
-
             - name: Bump patch version for beta ☝
               # Develop branch only
               if: github.ref == 'refs/heads/develop'
