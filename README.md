@@ -4,7 +4,7 @@
 
 <h3 align="center">Omni Widget</h3>
 <p align="center"><strong><code>@capitec/omni-widget</code></strong></p>
-<p align="center">Framework agnostic, zero dependency, remote widget interop web component and functions.</p>
+<p align="center">Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content with bi-directional communication.</p>
 
 <br />
 
@@ -35,9 +35,8 @@
 
 ## Introduction
 
-The `<omni-widget>` is a web component that makes hosting remote widgets easier, with built in messaging functions.
-<br/>
-The `Widget` class also exposes static functions to make it easier for hosted widgets to interact with their hosting application when the host makes use of the `omni-widget` component.
+-   The `<omni-widget>` is a web component that makes hosting external web content easier, with bi-directional communication capabilities.
+-   The `Widget` class exposes static functions to make it easier for hosted external web content to interact with its `omni-widget` host.
 
 <br />
 

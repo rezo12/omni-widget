@@ -1,7 +1,7 @@
 {
 	"name": "@capitec/omni-widget",
-	"version": "0.0.1",
-	"description": "Framework agnostic, zero dependency, remote widget interop web component and functions.",
+	"version": "0.1.0",
+	"description": "Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content with bi-directional communication.",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
