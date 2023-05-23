@@ -4,7 +4,7 @@
 
 <h3 align="center">Omni Widget</h3>
 <p align="center"><strong><code>@capitec/omni-widget</code></strong></p>
-<p align="center">Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content with bi-directional communication.</p>
+<p align="center">Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content.</p>
 
 <br />
 
